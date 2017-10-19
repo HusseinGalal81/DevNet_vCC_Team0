@@ -13,3 +13,5 @@ Task 2 – please get the values for the keys below for each of the devices in t
 Please note that there should be only a single python file for both the tasks combined.
 
 Hint: the flask part is already completed for you - you just need to do the APIC-EM part(take help of swagger to find the right api) and use your spark api skills. 
+
+As a further reference you can take a look here to understand in detail about how the UI element works : https://abdvl.github.io/
