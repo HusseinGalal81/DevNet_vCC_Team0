@@ -67,9 +67,9 @@ def get_cmx_map(campus, building, floor, file):
     print('Request status code is: ', response.status_code)
 
     if response.status_code == 200:  # validate if the request was successful
-        print('Assignment 2 completed')
+        print('Step 2 completed')
     else:
-        print('Assignment 2 not completed, please try again')
+        print('Step 2 not completed, please try again')
 
     # open a file to save the image to
 
@@ -134,7 +134,7 @@ def main():
 
     clients_number = all_client_number()
     print('\nNumber of all active clients: ', clients_number)
-    print('Assignment 1 completed')
+    print('Step 1 completed')
 
     # 2.
 
@@ -153,7 +153,7 @@ def main():
     ap_y_coordinate = get_cmx_ap_info(campus, building, floor, ap_name)[2]
 
     print('\nThe AP with the name ', ap_name, ' coordinates are x/y: ', ap_x_coordinate, ap_y_coordinate)
-    print('Assignment 3 completed')
+    print('Step 3 completed')
 
 
 
