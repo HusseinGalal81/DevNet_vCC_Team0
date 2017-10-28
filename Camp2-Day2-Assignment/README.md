@@ -1,11 +1,15 @@
 # Assignment 1:
 The first assignment is to create a python script that takes a filter file as an argument and returns the required configuration.
 
-You will need to modify `Camp2-Day2-Assign1.py` file to add a code to get_config.  This code comes from an earlier lab you have done.
-This script takes a filter as an argument, in my example the filter file is `ip_filter.xml`.
- You will also need to write the filter to include only the name and IP address.
+You will need to modify the script `Camp2-Day2-Assign1.py` to add a code to the function get_config(xml_filter).  
+You should be able to reuse some code from an earlier Lab you did.
 
-A sample is shown below
+This script takes a filter as an argument, in my example the filter file is `ip_filter.xml`.
+
+You will also need to write the filter to include only the name and IP address.
+
+A sample is shown below:
+
 ```buildoutcfg
 $ ./Camp2-Day2-Assign1.py ip_filter.xml 
 <?xml version="1.0" ?>
@@ -31,22 +35,22 @@ $ ./Camp2-Day2-Assign1.py ip_filter.xml
 
 ```
 ## HINTS
-- Start with the interface filter you had in the lab and add the `name` and `ipv4` attributes
-- You will need the namespace for the ipv4.
+- Start with the interface filter you had in the lab and add the `name` and `ipv4` attributes.
+- You will need the namespace for the ipv4 container.
 
 
 # Assignxment 2:
-This assignment will edit a configuration file to add an IP address to GigabitEthernet2.
+This assignment will edit a configuration file to add an IP address to interface GigabitEthernet2.
 
-The file `add_ip_gig2.xml` is an example YANG snippet to an IP address to the interface GigabitEthernet2.  You do not need to change this file.
+The file `add_ip_gig2.xml` is an example YANG snippet to add an IP address to the interface GigabitEthernet2.  You do not need to change this file.
 
-You need to copy the file `Camp2-Day2-Assign1.py` to  `Camp2-Day2-Assign2.py`)
+You need to copy the file `Camp2-Day2-Assign1.py` to  `Camp2-Day2-Assign2.py`.
 
-Change `Camp2-Day2-Assign2.py` to read and edit the configuration using a filter, instead of doing a "get_config" as in the previous assigment.
+Modify the script `Camp2-Day2-Assign2.py` to read and edit the configuration using a filter.  Instead of doing a "get_config" as in the previous assigment, it will need to edit the configuration.
 
 You should only need to change one line in the file.  
 
-It would be better to change the name of the name of the `get_config` function to `edit_config`, which is more accurate.
+It would be better to change the name of the name of the function `get_config`, to something more appropriate such as `edit_config`.
 
 Example output shown below:
 ```buildoutcfg
