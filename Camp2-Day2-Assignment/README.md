@@ -1,0 +1,84 @@
+# Assigment 1:
+You will need to modify `Camp2-Day2-Assign1.py` file to add a code to get_config.  This comes from an earlier lab you have done.
+This script takes a filter as an argument.  You will also need to write the filter to include only the name and IP address.
+
+A sample is shown below
+```buildoutcfg
+$ ./Camp2-Day2-Assign1.py ip_filter.xml 
+<?xml version="1.0" ?>
+<rpc-reply message-id="urn:uuid:15f4aa2a-7ece-4688-b763-f38bb561871d" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <data>
+                <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                        <interface>
+                                <name>GigabitEthernet1</name>
+                                <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+                                        <address>
+                                                <ip>198.18.133.212</ip>
+                                                <netmask>255.255.192.0</netmask>
+                                        </address>
+                                </ipv4>
+                        </interface>
+                        <interface>
+                                <name>GigabitEthernet2</name>
+                                <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
+                        </interface>
+                </interfaces>
+        </data>
+</rpc-reply>
+
+```
+## HINTS
+- Start with the interface filter you had in the lab and add the `name` and `ipv4` attributes
+- You will need the namespace for the ipv4.
+
+# Assigment 2:
+The file `add_ip_gig2.xml` will add an IP address to the interface GigabitEthernet2.  You can take a look at it.
+
+You need to modify the file `Camp2-Day2-Assign1.py` (call it `Camp2-Day2-Assign2.py`)to read and edit the configuration, instead of doing a "get_config"
+
+Example output shown below:
+```buildoutcfg
+$ ./Camp2-Day2-Assign2.py add_ip_gig2.xml 
+<?xml version="1.0" ?>
+<rpc-reply message-id="urn:uuid:04b4f285-9dd7-42ee-993c-cafe6dfd769e" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <ok/>
+</rpc-reply>
+
+```
+
+## HINTS
+- You will need to change the get_config to edit_config
+- You will need to change the arguments.  `target='running'` is the main difference
+
+Run your filter program from Assignment 1 to verify the IP has changed. 
+
+```buildoutcfg
+$ ./Camp2-Day2-Assign1.py ip_filter.xml 
+<?xml version="1.0" ?>
+<rpc-reply message-id="urn:uuid:5deceaec-ea10-4f1a-a013-1a271d134dda" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <data>
+                <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+                        <interface>
+                                <name>GigabitEthernet1</name>
+                                <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+                                        <address>
+                                                <ip>198.18.133.212</ip>
+                                                <netmask>255.255.192.0</netmask>
+                                        </address>
+                                </ipv4>
+                        </interface>
+                        <interface>
+                                <name>GigabitEthernet2</name>
+                                <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+                                        <address>
+                                                <ip>10.10.10.1</ip>
+                                                <netmask>255.255.192.0</netmask>
+                                        </address>
+                                </ipv4>
+                        </interface>
+                </interfaces>
+        </data>
+</rpc-reply>
+
+
+```
