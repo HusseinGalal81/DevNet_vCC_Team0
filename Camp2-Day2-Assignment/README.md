@@ -39,7 +39,7 @@ $ ./Camp2-Day2-Assign1.py ip_filter.xml
 - You will need the namespace for the ipv4 container.
 
 
-# Assignxment 2:
+# Assignment 2:
 This assignment will edit a configuration file to add an IP address to interface GigabitEthernet2.
 
 The file `add_ip_gig2.xml` is an example YANG snippet to add an IP address to the interface GigabitEthernet2.  You do not need to change this file.
@@ -97,5 +97,9 @@ $ ./Camp2-Day2-Assign1.py ip_filter.xml
 </rpc-reply>
 ```
 
-# Optional
-Ideally, you could have a single script, and have a commandline argument to indicate if an get or edit config was required.
+## Optional
+
+Here are some ideas to extend these examples:
+- You can modify the filter to just return the interface GigabitEthernet2
+- You could make the interface filter a command line option
+- Ideally, you could have a single script, and have a commandline argument to indicate if an get or edit config was required.
