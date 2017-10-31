@@ -2,7 +2,7 @@
   <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
     <interface>
       <name>GigabitEthernet2</name>
-      <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd<</type>
+      <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
         <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
             <address>
                 <ip>10.10.10.1</ip>
@@ -11,5 +11,5 @@
         </ipv4>
 
     </interface>
-  </interfaces
+  </interfaces>
 </config>
